@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface2: #1c2128;
+  --color-border: #30363d;
+  --color-border-subtle: #21262d;
+  --color-text: #e6edf3;
+  --color-text-muted: #7d8590;
+  --color-text-dim: #484f58;
+  --color-primary: #2f80ed;
+  --color-primary-hover: #1a6fd4;
+  --color-verified: #10b981;
+  --color-verified-bg: rgba(16,185,129,0.08);
+  --color-warning: #f59e0b;
+  --color-accent: #7c3aed;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #484f58; }
+
+.waveform-bar {
+  display: inline-block;
+  background: #2f80ed;
+  border-radius: 2px;
+  animation: wave 1.2s ease-in-out infinite;
+}
+.waveform-bar:nth-child(2) { animation-delay: 0.1s; }
+.waveform-bar:nth-child(3) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(4) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(5) { animation-delay: 0.4s; }
+.waveform-bar:nth-child(6) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(7) { animation-delay: 0.1s; }
+.waveform-bar:nth-child(8) { animation-delay: 0.3s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.6; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-spin-slow {
+  animation: spin 1s linear infinite;
+}
+
+.counter-animate {
+  animation: countUp 0.4s ease-out;
+}
